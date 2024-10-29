@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Wallet</title>
+</head>
+<body>
+    <h1>Create Wallet for {{ user.username }}</h1>
+    <form method="POST" action="{% url 'create_wallet' user.id %}">
+        {% csrf_token %}
+        <p>Click the button below to create a wallet for {{ user.username }}.</p>
+        <button type="submit">Create Wallet</button>
+    </form>
+</body>
+</html>
